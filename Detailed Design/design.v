@@ -1,9 +1,13 @@
+//Project - N bit Full Adder Implementation
+//(parametrized N=32)
+
+
+//code of one full Adder
 module Full_Adder(in1,in2,cin,Sum,cout);
         input in1,in2,cin;
         output Sum,cout;
         wire i_sum;
         wire i_carry1,i_carry2,i_carry3;
-  		reg Sum,cout;
   
         assign #2 i_sum=in1 ^ in2;
         assign #1 i_carry1=in1 & in2;
@@ -13,6 +17,8 @@ module Full_Adder(in1,in2,cin,Sum,cout);
         assign #4 Sum= i_sum ^ cin;
 endmodule
 
+
+//instantiating the every full adderto make one 8 bit ripple carry 
 module Full_Adder_N(ra,rb,cin,Sum,Cout);  
   input [7:0] ra;
   input [7:0] rb;
@@ -37,37 +43,31 @@ module Full_Adder_N(ra,rb,cin,Sum,Cout);
 endmodule
 
 
-module Adder(TClk,ra,rb,cin,Sum,Cout);
-       
-        input [31:0] ra;
-        input [31:0] rb;
-        input cin,TClk;
-        output [31:0] Sum;
-        output Cout;
-  		reg c;
-  reg [4:0] c0;
-        reg clk;
-  		wire c1;
-  reg [31:0] Sum;
-        reg Cout;
-  assign c0[0]=cin;
-  reg w;
-  
-          reg [7:0] in1;
-          reg [7:0] in2;
-          reg [7:0] sum1;
-  Full_Adder_N fa_inst(.ra(in1),.rb(in2),.cin(c),.Sum(sum1),.Cout(c1));
-	genvar i;
-  always @(posedge TClk) begin
-				
-    in1=ra[7:0];
-    in2=rb[7:0];
-                c<=c1;
-              	Sum<=Sum<<8 | sum1;
-              end
-  assign Cout=c;
-	
+//insiantiating one 8 bit ripple carry adder 4 times to make 32 bit adder
+module Adder(TClk, ra, rb, cin, Sum, Cout);
+    input [31:0] ra;
+    input [31:0] rb;
+    input cin, TClk;
+    output reg [31:0] Sum;
+    output reg Cout;
+
+    wire [7:0] sum_parts[3:0];
+    wire carry[4:0];
+
+    assign carry[0] = cin;
+
+    // Instantiate 4 Full_Adder_N modules for 32 bits
+    Full_Adder_N fa0 (.ra(ra[7:0]),    .rb(rb[7:0]),    .cin(carry[0]), .Sum(sum_parts[0]), .Cout(carry[1]));
+    Full_Adder_N fa1 (.ra(ra[15:8]),   .rb(rb[15:8]),   .cin(carry[1]), .Sum(sum_parts[1]), .Cout(carry[2]));
+    Full_Adder_N fa2 (.ra(ra[23:16]),  .rb(rb[23:16]),  .cin(carry[2]), .Sum(sum_parts[2]), .Cout(carry[3]));
+    Full_Adder_N fa3 (.ra(ra[31:24]),  .rb(rb[31:24]),  .cin(carry[3]), .Sum(sum_parts[3]), .Cout(carry[4]));
+
+    always @(posedge TClk) begin
+        Sum <= {sum_parts[3], sum_parts[2], sum_parts[1], sum_parts[0]};
+        Cout <= carry[4];
+    end
 endmodule
+
 
 
 // clock period  = critical path (2(for isum)+2(for sum))*8=32
