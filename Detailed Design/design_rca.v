@@ -71,3 +71,33 @@ endmodule
 
 
 // clock period  = critical path (2(for isum)+2(for sum))*8=32
+
+
+//different way to write[parametrized way] the same functionality
+module full_adder(input a,b,cin, 
+				  output sum, cout);
+
+	assign sum = a^b^cin;
+	assign cout = (a & b) | (b & cin) | (cin & a);
+
+endmodule
+
+module ripple_c_adder #(parameter N =32)(
+	input [N-1:0] a,b,
+	input cin,
+	output [N-1:0] sum,
+	output cout);
+
+	wire [N:0] carry; //theese are the internal carray connecting chain wire
+	assign carry[0] = cin;
+
+	genvar i;
+	generate for(i = 0; i < N ; i++) 
+		begin
+		full_adder fa(.a(a[i]), .b(b[i]), .cin(carry[i], .sum(sum[i]), .cout(carry[i+1]));
+		end
+        endgenerate
+		assign cout = carry[i];
+	endmodule
+	
+	
