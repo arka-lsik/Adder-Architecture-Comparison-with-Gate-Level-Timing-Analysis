@@ -1,6 +1,6 @@
 # 32-bit Adder Architecture Comparison with Gate-Level Timing Analysis
 
-**Course Project | Prof. Dipanwita Roy Chowdhury, CSE, IIT Kharagpur**  
+**Course Project | [VLSI System Design], IIT Kharagpur**  
 **Tools:** Verilog HDL · Yosys · OpenSTA · Sky130 HD PDK
 
 ---
