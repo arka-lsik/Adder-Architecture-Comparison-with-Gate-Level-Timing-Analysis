@@ -9,7 +9,7 @@
 
 This project implements and compares two 32-bit adder architectures — Ripple Carry Adder (RCA) and Carry Lookahead Adder (CLA) — through a complete RTL-to-STA flow using open-source EDA tools. The goal is to quantify the timing trade-off between the two designs across multiple PVT (Process-Voltage-Temperature) corners using real gate-level netlists and industry-standard static timing analysis.
 
-The critical insight this project demonstrates: RCA has an O(N) carry chain that makes it fundamentally slow at 32-bit, while CLA computes carry signals in parallel through Generate/Propagate logic, achieving O(log N) depth — a 4.9× timing improvement at worst-case conditions.
+The critical insight this project demonstrates: RCA has an O(N) carry chain that makes it fundamentally slow at 32-bit, while CLA computes carry signals in parallel through Generate/Propagate logic, achieving O(log N) depth — a 4.9× timing improvement at worst-case conditions in my case assumption.
 
 ---
 
@@ -48,29 +48,11 @@ adder_sta/
 - Critical path = N × one full-adder delay → O(N) complexity
 - Synthesized to **64 standard cells** (32× MAJ3 + 32× XOR3)
 
-```verilog
-module rca #(parameter N = 32) (
-    input  [N-1:0] a, b,
-    input          cin,
-    output [N-1:0] sum,
-    output         cout
-);
-```
-
 ### Carry Lookahead Adder (CLA)
 - Built from parameterized 4-bit CLA blocks chained using `generate`
 - Each block computes Generate (G) and Propagate (P) signals
 - Carry computed in parallel across all blocks → O(log N) complexity
 - Synthesized to **168 standard cells** (mix of AOI, OAI, XNOR, MAJ3 cells)
-
-```verilog
-module cla #(parameter N = 32) (
-    input  [N-1:0] a, b,
-    input          cin,
-    output [N-1:0] sum,
-    output         cout
-);
-```
 
 ---
 
@@ -239,5 +221,5 @@ sta -exit run_sta_cla_ss.tcl | tee cla_ss_timing.txt
 
 **Arkadeep Halder**  
 M.Tech, VLSI & Signal Processing  
-Indian Institute of Technology, Kharagpur  
+IIT, Kharagpur  
 [LinkedIn](https://linkedin.com) · [GitHub](https://github.com)
