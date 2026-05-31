@@ -1,0 +1,30 @@
+Startpoint: cin (input port)
+Endpoint: cout (output port)
+Path Group: path delay
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000 v input external delay
+   0.000    0.000 v cin (in)
+   0.363    0.363 v fa_chain[0].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    0.747 v fa_chain[1].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    1.130 v fa_chain[2].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    1.514 v fa_chain[3].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    1.897 v fa_chain[4].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    2.281 v fa_chain[5].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    2.665 v fa_chain[6].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    3.048 v fa_chain[7].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    3.432 v fa_chain[8].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    3.815 v fa_chain[9].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    4.199 v fa_chain[10].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    4.583 v fa_chain[11].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    4.966 v fa_chain[12].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    5.350 v fa_chain[13].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    5.733 v fa_chain[14].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    6.117 v fa_chain[15].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    6.501 v fa_chain[16].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    6.884 v fa_chain[17].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    7.268 v fa_chain[18].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    7.651 v fa_chain[19].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.384    8.035 v fa_chain[20].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
