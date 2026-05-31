@@ -28,5 +28,31 @@ Path Type: max
    0.197    3.754 v fa_chain[18].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
    0.197    3.951 v fa_chain[19].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
    0.197    4.149 v fa_chain[20].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    4.346 v fa_chain[21].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    4.543 v fa_chain[22].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    4.740 v fa_chain[23].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    4.938 v fa_chain[24].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    5.135 v fa_chain[25].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    5.332 v fa_chain[26].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    5.529 v fa_chain[27].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    5.727 v fa_chain[28].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    5.924 v fa_chain[29].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.197    6.121 v fa_chain[30].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.157    6.279 v fa_chain[31].fa/_1_/X (sky130_fd_sc_hd__maj3_1)
+   0.000    6.279 v cout (out)
+            6.279   data arrival time
+
+   5.000    5.000   max_delay
+   0.000    5.000   output external delay
+            5.000   data required time
+-----------------------------------------------------------
+            5.000   data required time
+           -6.279   data arrival time
+-----------------------------------------------------------
+           -1.279   slack (VIOLATED)
+
+
+wns max -1.28
+tns max -5.73
 
 
