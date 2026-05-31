@@ -27,3 +27,12 @@ Path Type: max
    5.000    5.000   max_delay
    0.000    5.000   output external delay
             5.000   data required time
+-----------------------------------------------------------
+            5.000   data required time
+           -1.686   data arrival time
+-----------------------------------------------------------
+            3.314   slack (MET)
+
+
+wns max 0.00
+tns max 0.00
