@@ -1,0 +1,29 @@
+Startpoint: a[1] (input port)
+Endpoint: sum[31] (output port)
+Path Group: path delay
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000 v input external delay
+   0.000    0.000 v a[1] (in)
+   0.358    0.358 ^ cla_chain[0].blk/_18_/Y (sky130_fd_sc_hd__xnor2_1)
+   0.235    0.592 v cla_chain[0].blk/_24_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.594    1.186 v cla_chain[0].blk/_26_/X (sky130_fd_sc_hd__a221o_1)
+   0.339    1.525 v cla_chain[0].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    1.883 v cla_chain[1].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    2.242 v cla_chain[2].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    2.600 v cla_chain[3].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    2.959 v cla_chain[4].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    3.317 v cla_chain[5].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.358    3.676 v cla_chain[6].blk/_27_/X (sky130_fd_sc_hd__a21o_1)
+   0.822    4.498 v cla_chain[7].blk/_29_/X (sky130_fd_sc_hd__maj3_1)
+   0.477    4.975 ^ cla_chain[7].blk/_31_/Y (sky130_fd_sc_hd__a21boi_0)
+   0.297    5.272 v cla_chain[7].blk/_33_/Y (sky130_fd_sc_hd__o21ai_0)
+   0.221    5.493 v cla_chain[7].blk/_34_/Y (sky130_fd_sc_hd__xnor2_1)
+   0.000    5.493 v sum[31] (out)
+            5.493   data arrival time
+
+   5.000    5.000   max_delay
+   0.000    5.000   output external delay
+            5.000   data required time
