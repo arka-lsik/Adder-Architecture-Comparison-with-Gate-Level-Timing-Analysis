@@ -1,3 +1,5 @@
+#OpenSTA script — ripple carry adder, TT(typical) corner
+
 read_liberty sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog rca_netlist.v
 link_design rca
